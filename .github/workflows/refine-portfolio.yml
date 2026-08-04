@@ -1,0 +1,30 @@
+name: Refine portfolio
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/refine-portfolio.yml'
+      - 'tools/refine_portfolio.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refine:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Build refined portfolio
+        run: python tools/refine_portfolio.py
+      - name: Commit generated site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html styles.css script.js README.md assets
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Refine portfolio based on original design"
+            git push origin HEAD:main
+          fi
