@@ -113,6 +113,23 @@
 
   document.getElementById("year").textContent = new Date().getFullYear();
 
+  function downloadResume(event) {
+    event.preventDefault();
+    const encoded = window.YIBO_RESUME_BASE64;
+    if (!encoded) { alert("The résumé is temporarily unavailable. Please contact asherxiong552@gmail.com."); return; }
+    try {
+      const binary = atob(encoded);
+      const bytes = new Uint8Array(binary.length);
+      for (let i = 0; i < binary.length; i += 1) bytes[i] = binary.charCodeAt(i);
+      const url = URL.createObjectURL(new Blob([bytes], { type: "application/pdf" }));
+      const anchor = document.createElement("a");
+      anchor.href = url; anchor.download = "Yibo_Xiong_Resume.pdf";
+      document.body.appendChild(anchor); anchor.click(); anchor.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
+    } catch (error) { console.error(error); alert("The résumé could not be downloaded. Please contact asherxiong552@gmail.com."); }
+  }
+  document.querySelectorAll(".resume-download").forEach((link) => link.addEventListener("click", downloadResume));
+
   const canvas = document.getElementById("neural-canvas");
   if (!canvas) return;
 
