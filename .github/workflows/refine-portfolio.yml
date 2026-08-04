@@ -5,6 +5,7 @@ on:
     paths:
       - '.github/workflows/refine-portfolio.yml'
       - 'tools/refine_portfolio.py'
+      - 'tools/fix_image_quality.py'
   workflow_dispatch:
 permissions:
   contents: write
@@ -17,6 +18,8 @@ jobs:
           fetch-depth: 0
       - name: Build refined portfolio
         run: python tools/refine_portfolio.py
+      - name: Apply image quality correction
+        run: python tools/fix_image_quality.py
       - name: Commit generated site
         run: |
           git config user.name "github-actions[bot]"
@@ -25,6 +28,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Refine portfolio based on original design"
+            git commit -m "Improve portfolio image rendering"
             git push origin HEAD:main
           fi
