@@ -6,6 +6,7 @@ on:
       - '.github/workflows/refine-portfolio.yml'
       - 'tools/refine_portfolio.py'
       - 'tools/fix_image_quality.py'
+      - 'tools/polish_layout.py'
   workflow_dispatch:
 permissions:
   contents: write
@@ -20,6 +21,8 @@ jobs:
         run: python tools/refine_portfolio.py
       - name: Apply image quality correction
         run: python tools/fix_image_quality.py
+      - name: Polish responsive layout
+        run: python tools/polish_layout.py
       - name: Commit generated site
         run: |
           git config user.name "github-actions[bot]"
@@ -28,6 +31,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "Improve portfolio image rendering"
+            git commit -m "Polish portfolio layout and spacing"
             git push origin HEAD:main
           fi
