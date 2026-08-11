@@ -1770,7 +1770,8 @@ html[data-theme="light"] .moon-icon {
 
 /* Image quality correction */
 .portrait-orbit {
-  transform: none !important;
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 .hero-portrait {
   width: 248px;
