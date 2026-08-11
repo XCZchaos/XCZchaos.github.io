@@ -215,21 +215,22 @@
                   <h3>Algorithm Engineer</h3>
                   <p>Hangzhou Rongnao Technology Co., Ltd.</p>
                 </div>
-                <span>Wearable biosignals · SDK · Full-stack</span>
+                <span>Wearable biosignals · Cross-platform SDK</span>
               </div>
               <p>
-                Developing cross-platform physiological-signal SDKs and a multimodal EEG–fNIRS
-                platform spanning acquisition, real-time analysis, reporting, and device quality validation.
+                Architecting Windows and Android SDKs that turn heterogeneous physiological-signal
+                algorithms into stable capabilities for acquisition, real-time metrics, offline reports,
+                and device quality validation.
               </p>
               <ul>
-                <li>Architected Windows and Android SDKs that unify EEG, fNIRS, HR/HRV, SpO₂, device decoding, and quality algorithms.</li>
-                <li>Built a high-throughput backend with Go, Gin, GORM, MySQL, and WebSocket streaming.</li>
-                <li>Designed timestamp compensation for cross-rate EEG and fNIRS synchronization.</li>
-                <li>Integrated deep-learning inference for cognitive-load and sleep-state prediction.</li>
-                <li>Created Vue 3 monitoring interfaces, JWT authentication, and research-oriented CSV export.</li>
+                <li>Designed a four-layer API–service–binding–algorithm architecture using Node.js FFI on Windows and JNI/NDK on Android.</li>
+                <li>Standardized native function contracts, data structures, validation, error codes, memory ownership, sampling rates, and result formats.</li>
+                <li>Integrated real-time and offline EEG, fNIRS, ECG/PPG/fNIRS pulse, HR/HRV, and SpO₂ processing workflows.</li>
+                <li>Built Session-based stateful streams with reset/close lifecycle controls and Ready/Fresh result semantics.</li>
+                <li>Unified device-stream decoding, quality-test interfaces, build packaging, test vectors, examples, and release checklists.</li>
               </ul>
               <div class="tag-row">
-                <span>C/C++</span><span>CMake</span><span>Node.js FFI</span><span>JNI/NDK</span><span>Go</span><span>Vue 3</span><span>PyTorch</span><span>WebSocket</span>
+                <span>C/C++</span><span>TypeScript/Node.js</span><span>Java/Kotlin</span><span>Android NDK</span><span>DLL</span><span>AAR</span>
               </div>
             </div>
           </article>
@@ -305,32 +306,36 @@
             <div class="project-number">01</div>
             <div class="project-graphic sdk-architecture" aria-hidden="true">
               <div class="sdk-platforms">
-                <span>WINDOWS<small>DLL · npm</small></span>
-                <span>ANDROID<small>JNI · AAR</small></span>
+                <span>WINDOWS<small>Node.js FFI · DLL</small></span>
+                <span>ANDROID<small>Java/Kotlin · JNI/NDK · AAR</small></span>
               </div>
               <div class="sdk-layers">
                 <div><span>01</span><strong>PUBLIC API</strong><small>Stable contracts</small></div>
-                <div><span>02</span><strong>BUSINESS SERVICES</strong><small>Sessions · validation · state</small></div>
+                <div><span>02</span><strong>BUSINESS SERVICES</strong><small>Validation · lifecycle · state</small></div>
                 <div><span>03</span><strong>NATIVE BINDINGS</strong><small>FFI · JNI · NDK</small></div>
-                <div><span>04</span><strong>ALGORITHM LIBRARIES</strong><small>EEG · fNIRS · HRV · quality</small></div>
+                <div><span>04</span><strong>ALGORITHM LIBRARIES</strong><small>Signals · reports · quality</small></div>
               </div>
             </div>
             <div class="project-copy">
               <p class="project-type">Cross-platform biosignal SDK · Jul 2026 — Present</p>
-              <h3>Physiological Signal Algorithm SDK</h3>
+              <h3>Cross-Platform Physiological Signal Algorithm SDK</h3>
               <p>
-                Architected and developed a reusable SDK for Windows and Android, unifying
-                heterogeneous C/C++ algorithms for EEG, fNIRS, ECG/PPG-based HR and HRV,
-                SpO₂, device-stream decoding, offline reports, and hardware quality validation.
+                Designed and developed a unified Windows and Android SDK that packages
+                heterogeneous C/C++ algorithms into reusable modules for device decoding,
+                real-time metrics, offline analysis, and production-grade quality validation.
               </p>
+              <div class="sdk-capabilities">
+                <div><small>Signal pipelines</small><strong>EEG · fNIRS · HR/HRV · SpO₂</strong></div>
+                <div><small>Streaming runtime</small><strong>Session · reset/close · Ready/Fresh</strong></div>
+                <div><small>Device decoding</small><strong>Timestamps · IMU · temperature · battery</strong></div>
+                <div><small>Quality validation</small><strong>SNR · crosstalk · stability · step response</strong></div>
+              </div>
               <div class="project-highlights">
-                <span>Four-layer architecture: API → services → native bindings → algorithms</span>
-                <span>Session-based streaming with explicit Ready/Fresh state semantics</span>
-                <span>Up to 16-channel EEG and 256-channel fNIRS data structures</span>
-                <span>Windows v0.4.17 · Android v0.4.16</span>
+                <span>Unified contracts, data models, validation, errors, memory ownership, and state semantics</span>
+                <span>Supports data structures for up to 16-channel EEG and 256-channel fNIRS devices</span>
               </div>
               <div class="tag-row">
-                <span>C/C++</span><span>CMake</span><span>TypeScript</span><span>Node.js FFI</span><span>JNI/NDK</span><span>Gradle</span><span>DLL</span><span>AAR</span><span>npm</span>
+                <span>C/C++</span><span>TypeScript/Node.js</span><span>Java/Kotlin</span><span>Android NDK</span><span>DLL</span><span>AAR</span>
               </div>
             </div>
           </article>
@@ -481,7 +486,7 @@
             </div>
             <div>
               <h4>SDK Engineering</h4>
-              <p>C/C++ · CMake · TypeScript/Node.js · FFI · JNI/NDK · Gradle · DLL · AAR · npm</p>
+              <p>C/C++ · TypeScript/Node.js · Java/Kotlin · Android NDK · FFI/JNI · DLL · AAR</p>
             </div>
             <div>
               <h4>Systems</h4>
