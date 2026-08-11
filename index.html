@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Yibo Xiong — Wearable Biosignal Algorithm Engineer working across EEG, fNIRS, ECG, PPG, ACC, multimodal learning, and deployable physiological-signal systems." />
+  <meta name="description" content="Yibo Xiong — Wearable Biosignal Algorithm Engineer building cross-platform SDKs and deployable systems for EEG, fNIRS, ECG, PPG, ACC, and multimodal physiological signals." />
   <meta name="theme-color" content="#070b14" />
   <meta property="og:title" content="Yibo Xiong — Wearable Biosignal Algorithm Engineer" />
   <meta property="og:description" content="Algorithms and intelligent systems for wearable biosignals." />
@@ -93,7 +93,7 @@
 
           <p class="hero-lead">
             I develop algorithms across the wearable biosignal pipeline—from <strong>EEG and fNIRS acquisition</strong>
-            to multimodal preprocessing, representation learning, real-time inference, and deployable systems.
+            to multimodal preprocessing, representation learning, real-time inference, cross-platform SDKs, and deployable systems.
             I also work with the fundamentals of <strong>ECG, PPG, and accelerometer (ACC) signal preprocessing</strong>.
           </p>
 
@@ -215,20 +215,21 @@
                   <h3>Algorithm Engineer</h3>
                   <p>Hangzhou Rongnao Technology Co., Ltd.</p>
                 </div>
-                <span>Neurotechnology · Full-stack</span>
+                <span>Wearable biosignals · SDK · Full-stack</span>
               </div>
               <p>
-                Developing a multimodal EEG–fNIRS platform that integrates acquisition,
-                live monitoring, feature analysis, and cognitive-state prediction.
+                Developing cross-platform physiological-signal SDKs and a multimodal EEG–fNIRS
+                platform spanning acquisition, real-time analysis, reporting, and device quality validation.
               </p>
               <ul>
+                <li>Architected Windows and Android SDKs that unify EEG, fNIRS, HR/HRV, SpO₂, device decoding, and quality algorithms.</li>
                 <li>Built a high-throughput backend with Go, Gin, GORM, MySQL, and WebSocket streaming.</li>
                 <li>Designed timestamp compensation for cross-rate EEG and fNIRS synchronization.</li>
                 <li>Integrated deep-learning inference for cognitive-load and sleep-state prediction.</li>
                 <li>Created Vue 3 monitoring interfaces, JWT authentication, and research-oriented CSV export.</li>
               </ul>
               <div class="tag-row">
-                <span>Go</span><span>Gin</span><span>Vue 3</span><span>PyTorch</span><span>MNE</span><span>MySQL</span><span>WebSocket</span>
+                <span>C/C++</span><span>CMake</span><span>Node.js FFI</span><span>JNI/NDK</span><span>Go</span><span>Vue 3</span><span>PyTorch</span><span>WebSocket</span>
               </div>
             </div>
           </article>
@@ -295,13 +296,47 @@
           <span class="section-index">03</span>
           <div>
             <p class="kicker">Selected Projects</p>
-            <h2>Systems built around<br />real neural data.</h2>
+            <h2>Systems built around<br />real-world biosignals.</h2>
           </div>
         </div>
 
         <div class="project-grid">
-          <article class="project-card project-featured reveal">
+          <article class="project-card project-featured project-sdk reveal">
             <div class="project-number">01</div>
+            <div class="project-graphic sdk-architecture" aria-hidden="true">
+              <div class="sdk-platforms">
+                <span>WINDOWS<small>DLL · npm</small></span>
+                <span>ANDROID<small>JNI · AAR</small></span>
+              </div>
+              <div class="sdk-layers">
+                <div><span>01</span><strong>PUBLIC API</strong><small>Stable contracts</small></div>
+                <div><span>02</span><strong>BUSINESS SERVICES</strong><small>Sessions · validation · state</small></div>
+                <div><span>03</span><strong>NATIVE BINDINGS</strong><small>FFI · JNI · NDK</small></div>
+                <div><span>04</span><strong>ALGORITHM LIBRARIES</strong><small>EEG · fNIRS · HRV · quality</small></div>
+              </div>
+            </div>
+            <div class="project-copy">
+              <p class="project-type">Cross-platform biosignal SDK · Jul 2026 — Present</p>
+              <h3>Physiological Signal Algorithm SDK</h3>
+              <p>
+                Architected and developed a reusable SDK for Windows and Android, unifying
+                heterogeneous C/C++ algorithms for EEG, fNIRS, ECG/PPG-based HR and HRV,
+                SpO₂, device-stream decoding, offline reports, and hardware quality validation.
+              </p>
+              <div class="project-highlights">
+                <span>Four-layer architecture: API → services → native bindings → algorithms</span>
+                <span>Session-based streaming with explicit Ready/Fresh state semantics</span>
+                <span>Up to 16-channel EEG and 256-channel fNIRS data structures</span>
+                <span>Windows v0.4.17 · Android v0.4.16</span>
+              </div>
+              <div class="tag-row">
+                <span>C/C++</span><span>CMake</span><span>TypeScript</span><span>Node.js FFI</span><span>JNI/NDK</span><span>Gradle</span><span>DLL</span><span>AAR</span><span>npm</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card project-featured reveal">
+            <div class="project-number">02</div>
             <div class="project-graphic graphic-multimodal" aria-hidden="true">
               <div class="modality eeg-node">EEG</div>
               <div class="modality fnirs-node">fNIRS</div>
@@ -330,7 +365,7 @@
           </article>
 
           <article class="project-card reveal">
-            <div class="project-number">02</div>
+            <div class="project-number">03</div>
             <div class="mini-wave" aria-hidden="true">
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
@@ -346,7 +381,7 @@
           </article>
 
           <article class="project-card reveal">
-            <div class="project-number">03</div>
+            <div class="project-number">04</div>
             <div class="pipeline-graphic" aria-hidden="true">
               <span>RAW</span><i></i><span>CLEAN</span><i></i><span>FEATURE</span><i></i><span>MODEL</span>
             </div>
@@ -362,7 +397,7 @@
           </article>
 
           <article class="project-card reveal">
-            <div class="project-number">04</div>
+            <div class="project-number">05</div>
             <div class="project-icon" aria-hidden="true">
               <svg viewBox="0 0 64 64">
                 <path d="M13 39c5-1 7-7 9-14 3-11 7-15 11-4 4 10 6 19 11 18 4-1 5-7 7-13"></path>
@@ -445,8 +480,12 @@
               <p>Filtering · Resampling · Segmentation · Normalization · Basic Artifact Handling</p>
             </div>
             <div>
+              <h4>SDK Engineering</h4>
+              <p>C/C++ · CMake · TypeScript/Node.js · FFI · JNI/NDK · Gradle · DLL · AAR · npm</p>
+            </div>
+            <div>
               <h4>Systems</h4>
-              <p>Gin · GORM · Vue 3 · React · MySQL · WebSocket · ECharts</p>
+              <p>Go · Gin · GORM · Vue 3 · React · MySQL · WebSocket · ECharts</p>
             </div>
           </div>
         </div>
