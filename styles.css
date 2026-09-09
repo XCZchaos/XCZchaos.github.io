@@ -2449,8 +2449,8 @@ html[data-theme="light"] .moon-icon {
 }
 
 .company-line img {
-  width: 44px;
-  height: 30px;
+  width: 62px;
+  height: 40px;
   flex: 0 0 auto;
   padding: 3px 5px;
   border: 1px solid var(--line);
