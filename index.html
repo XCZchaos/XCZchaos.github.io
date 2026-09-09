@@ -11,7 +11,7 @@
   <meta property="og:image" content="assets/og-cover.svg" />
   <title>Yibo Xiong — Wearable Biosignal Algorithm Engineer</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css?v=20260909d" />
+  <link rel="stylesheet" href="styles.css?v=20260909e" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -36,6 +36,7 @@
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
   <canvas id="neural-canvas" aria-hidden="true"></canvas>
   <div class="noise" aria-hidden="true"></div>
@@ -173,6 +174,19 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
           </a>
         </article>
+        <div class="news-feed reveal" aria-label="Latest personal updates">
+          <div class="news-feed-tabs" role="tablist" aria-label="Select an update">
+            <button class="news-feed-tab active" type="button" role="tab" aria-selected="true" data-news="competition"><span>SEP 2026</span><strong>BCI collaboration</strong></button>
+            <button class="news-feed-tab" type="button" role="tab" aria-selected="false" data-news="paper"><span>2026</span><strong>Journal publication</strong></button>
+            <button class="news-feed-tab" type="button" role="tab" aria-selected="false" data-news="patent"><span>SEP 2025</span><strong>Patent granted</strong></button>
+          </div>
+          <div class="news-feed-detail" role="tabpanel" aria-live="polite">
+            <span class="news-feed-date">SEP 2026 · OPEN</span>
+            <h3>Open to BCI competition collaboration</h3>
+            <p>Welcoming team invitations involving physiological signal algorithms, multimodal learning, real-time inference, or BCI system development.</p>
+            <a href="mailto:asherxiong552@gmail.com?subject=BCI%20Competition%20Collaboration">Discuss collaboration ↗</a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -220,32 +234,37 @@
             <h3 id="pipeline-title">From physiological signals<br />to usable product outcomes.</h3>
             <p>I work across the full chain, preserving algorithm rigor while shaping each capability for researchers, application developers, and analysis workflows.</p>
           </div>
-          <div class="pipeline-stages">
-            <section>
+          <div class="pipeline-stages" role="group" aria-label="Interactive algorithm delivery stages">
+            <button class="pipeline-stage active" type="button" data-stage="align" aria-pressed="true">
               <span>01 · ALIGN</span>
               <strong>Acquire & synchronize</strong>
               <p>EEG, fNIRS, behavioral markers, unified timestamps, and cross-device bias compensation.</p>
-            </section>
-            <section>
+            </button>
+            <button class="pipeline-stage" type="button" data-stage="clean" aria-pressed="false">
               <span>02 · CLEAN</span>
               <strong>Preprocess & qualify</strong>
               <p>Filtering, artifact suppression, segmentation, baseline correction, and signal-quality checks.</p>
-            </section>
-            <section>
+            </button>
+            <button class="pipeline-stage" type="button" data-stage="learn" aria-pressed="false">
               <span>03 · LEARN</span>
               <strong>Engineer & model</strong>
               <p>Interpretable physiological features, multimodal fusion, and lightweight deep-learning models.</p>
-            </section>
-            <section>
+            </button>
+            <button class="pipeline-stage" type="button" data-stage="serve" aria-pressed="false">
               <span>04 · SERVE</span>
               <strong>Integrate & infer</strong>
               <p>Model evaluation, real-time inference, C/C++ algorithm cores, and FFI/JNI/NDK interfaces.</p>
-            </section>
-            <section>
+            </button>
+            <button class="pipeline-stage" type="button" data-stage="deliver" aria-pressed="false">
               <span>05 · DELIVER</span>
               <strong>Turn results into value</strong>
               <p>Research workflows, reusable SDKs, quantitative visualization, and report-ready analysis.</p>
-            </section>
+            </button>
+          </div>
+          <div class="pipeline-detail" aria-live="polite">
+            <span>SELECTED STAGE · 01</span>
+            <div><h4>Multimodal acquisition and alignment</h4><p>Synchronize EEG, fNIRS, behavioral events, and stimulus markers through unified timestamps and offset compensation, creating a dependable input for downstream analysis.</p></div>
+            <strong>Evidence: research platform · emotion experiment platform</strong>
           </div>
           <div class="audience-strip" aria-label="Primary users served">
             <span>RESEARCHERS<small>Unified experiments & reproducible analysis</small></span>
@@ -336,8 +355,20 @@
           </div>
         </div>
 
+        <div class="project-toolbar reveal" aria-label="Filter selected projects">
+          <span>FILTER BY</span>
+          <div role="group" aria-label="Project categories">
+            <button class="project-filter active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="project-filter" type="button" data-filter="deep-learning" aria-pressed="false">Deep Learning</button>
+            <button class="project-filter" type="button" data-filter="eeg-fnirs" aria-pressed="false">EEG + fNIRS</button>
+            <button class="project-filter" type="button" data-filter="sdk" aria-pressed="false">SDK</button>
+            <button class="project-filter" type="button" data-filter="product" aria-pressed="false">Product Delivery</button>
+          </div>
+          <p class="project-count" aria-live="polite">4 projects</p>
+        </div>
+
         <div class="project-grid">
-          <article class="project-card project-featured project-sdk reveal">
+          <article class="project-card project-featured project-sdk reveal" data-project-tags="sdk eeg-fnirs product" data-project-id="sdk">
             <div class="project-number">01</div>
             <div class="project-graphic sdk-architecture" aria-hidden="true">
               <div class="sdk-platforms">
@@ -372,10 +403,11 @@
               <div class="tag-row">
                 <span>C/C++</span><span>TypeScript/Node.js</span><span>Java/Kotlin</span><span>Android NDK</span><span>DLL</span><span>AAR</span>
               </div>
+              <button class="project-open" type="button" data-project-open="sdk">View case study <span>↗</span></button>
             </div>
           </article>
 
-          <article class="project-card project-featured reveal">
+          <article class="project-card project-featured reveal" data-project-tags="deep-learning eeg-fnirs product" data-project-id="research-platform">
             <div class="project-number">02</div>
             <div class="project-graphic graphic-multimodal" aria-hidden="true">
               <div class="modality eeg-node">EEG</div>
@@ -406,10 +438,11 @@
                 <div><small>ALGORITHM</small><strong>State prediction pipeline</strong></div>
                 <div><small>OUTCOME</small><strong>Reusable research workflow</strong></div>
               </div>
+              <button class="project-open" type="button" data-project-open="research-platform">View case study <span>↗</span></button>
             </div>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card reveal" data-project-tags="deep-learning product" data-project-id="emotion-platform">
             <div class="project-number">03</div>
             <div class="mini-wave" aria-hidden="true">
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -427,10 +460,11 @@
                 <span>Real-time inference on an EEG headband</span>
               </div>
               <div class="compact-outcome"><small>DELIVERED</small><strong>Experiment-to-visualization prototype</strong></div>
+              <button class="project-open" type="button" data-project-open="emotion-platform">View case study <span>↗</span></button>
             </div>
           </article>
 
-          <article class="project-card reveal">
+          <article class="project-card reveal" data-project-tags="eeg-fnirs product" data-project-id="medical-platform">
             <div class="project-number">04</div>
             <div class="pipeline-graphic" aria-hidden="true">
               <span>EEG</span><i></i><span>fNIRS</span><i></i><span>METRICS</span><i></i><span>REPORT</span>
@@ -448,13 +482,15 @@
                 <span>fNIRS HbO/HbR/HbT and VFT indicators</span>
                 <span>HRV and cross-correlation coupling metrics</span>
               </div>
-              <div class="metric-board" aria-label="Medical analysis algorithm groups">
-                <div><small>EEG</small><strong>5-band power · PAF · FAA</strong></div>
-                <div><small>fNIRS</small><strong>HbO/HbR/HbT · S · T · K</strong></div>
-                <div><small>AUTONOMIC</small><strong>HRV time & frequency domain</strong></div>
-                <div><small>COUPLING</small><strong>CCF strength & time delay</strong></div>
+              <div class="metric-board" role="group" aria-label="Explore medical analysis algorithm groups">
+                <button class="metric-option active" type="button" data-metric="eeg" aria-pressed="true"><small>EEG</small><strong>5-band power · PAF · FAA</strong></button>
+                <button class="metric-option" type="button" data-metric="fnirs" aria-pressed="false"><small>fNIRS</small><strong>HbO/HbR/HbT · S · T · K</strong></button>
+                <button class="metric-option" type="button" data-metric="hrv" aria-pressed="false"><small>AUTONOMIC</small><strong>HRV time & frequency domain</strong></button>
+                <button class="metric-option" type="button" data-metric="coupling" aria-pressed="false"><small>COUPLING</small><strong>CCF strength & time delay</strong></button>
               </div>
+              <div class="metric-detail" aria-live="polite"><span>EEG METRICS</span><p>Quantifies neural rhythms, peak alpha frequency, and frontal alpha asymmetry for interpretable brain-function summaries.</p></div>
               <div class="compact-outcome"><small>PRODUCT LOOP</small><strong>Preprocessing → metrics → rules → interpretable report</strong></div>
+              <button class="project-open" type="button" data-project-open="medical-platform">View case study <span>↗</span></button>
             </div>
           </article>
         </div>
@@ -592,10 +628,30 @@
             Start a conversation
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
           </a>
+          <button class="button button-secondary copy-email" type="button" data-copy-email="asherxiong552@gmail.com">Copy email</button>
           <a class="text-link resume-download" href="#">Download full résumé <span>↓</span></a>
         </div>
       </div>
     </section>
+
+    <dialog class="project-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-shell">
+        <button class="dialog-close" type="button" aria-label="Close project details">×</button>
+        <div class="dialog-header">
+          <p class="project-type dialog-type">PROJECT CASE STUDY</p>
+          <h2 id="dialog-title">Project title</h2>
+          <p class="dialog-summary"></p>
+        </div>
+        <div class="dialog-star">
+          <section><span>01 · CONTEXT</span><h3>Situation</h3><p data-dialog-field="situation"></p></section>
+          <section><span>02 · OWNERSHIP</span><h3>Task</h3><p data-dialog-field="task"></p></section>
+          <section><span>03 · EXECUTION</span><h3>Action</h3><p data-dialog-field="action"></p></section>
+          <section><span>04 · DELIVERY</span><h3>Result</h3><p data-dialog-field="result"></p></section>
+        </div>
+        <div class="dialog-footer"><span>CORE STACK</span><p class="dialog-stack"></p></div>
+      </div>
+    </dialog>
+    <div class="site-toast" role="status" aria-live="polite"></div>
   </main>
 
   <footer class="footer">
@@ -606,6 +662,6 @@
   </footer>
 
   <script src="assets/resume-data.js?v=20260909b"></script>
-  <script src="script.js?v=20260909b"></script>
+  <script src="script.js?v=20260909e"></script>
 </body>
 </html>
