@@ -279,9 +279,24 @@ html[data-language="zh"] body {
   font-family: "PingFang SC", "Microsoft YaHei", "Noto Sans CJK SC", Inter, system-ui, sans-serif;
 }
 
+.hero-title-zh,
+.hero-lead-zh {
+  display: none;
+}
+
+html[data-language="zh"] .hero-title-en,
+html[data-language="zh"] .hero-lead-en {
+  display: none;
+}
+
+html[data-language="zh"] .hero-title-zh,
+html[data-language="zh"] .hero-lead-zh {
+  display: block;
+}
+
 html[data-language="zh"] .hero h1 {
   max-width: none;
-  font-size: clamp(34px, 2.8vw, 40px);
+  font-size: clamp(34px, 2.65vw, 36px);
   line-height: 1.18;
   letter-spacing: -.04em;
   white-space: nowrap;
@@ -2036,8 +2051,8 @@ html[data-theme="light"] .moon-icon {
 }
 
 .hero-grid {
-  grid-template-columns: minmax(0, 1.16fr) minmax(390px, .84fr);
-  gap: 52px;
+  grid-template-columns: minmax(0, 1.25fr) minmax(370px, .75fr);
+  gap: 44px;
 }
 
 .hero h1 {

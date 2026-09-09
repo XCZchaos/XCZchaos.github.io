@@ -60,15 +60,6 @@
       languageToggle.setAttribute("title", language === "zh" ? "Switch to English" : "切换至中文");
     }
 
-    if (language === "zh") {
-      const heroLeadStrong = document.querySelector(".hero-lead strong");
-      if (heroLeadStrong?.previousSibling) {
-        heroLeadStrong.previousSibling.nodeValue = heroLeadStrong.previousSibling.nodeValue.trimEnd();
-      }
-      if (heroLeadStrong?.nextSibling) {
-        heroLeadStrong.nextSibling.nodeValue = heroLeadStrong.nextSibling.nodeValue.trimStart();
-      }
-    }
   }
 
   applyLanguage(currentLanguage);
