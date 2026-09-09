@@ -168,44 +168,6 @@
     });
   });
 
-  const newsData = {
-    competition: {
-      date: "SEP 2026 · OPEN",
-      title: "Open to BCI competitions, research, and project collaboration",
-      copy: "Welcoming competition teams, research partners, open-source contributors, and project collaborators working on physiological signal algorithms, multimodal learning, real-time inference, or BCI systems.",
-      link: "mailto:asherxiong552@gmail.com?subject=BCI%20Research%20or%20Project%20Collaboration",
-      action: "Discuss collaboration ↗",
-    },
-    paper: {
-      date: "2026 · PUBLICATION",
-      title: "First-author EEG decoding paper published",
-      copy: "CT-MIFNet was published in Biomedical Signal Processing and Control, presenting convolutional Transformer-based multi-view interaction and fusion for EEG decoding.",
-      link: "https://doi.org/10.1016/j.bspc.2025.108421",
-      action: "Read the paper ↗",
-    },
-    patent: {
-      date: "SEP 2025 · GRANTED",
-      title: "Chinese invention patent granted",
-      copy: "The EEG-based emotion-recognition result visualization method and system received authorization under patent ZL 2025 1 0102267.X.",
-      link: "#research",
-      action: "View patent details ↓",
-    },
-  };
-
-  const newsDetail = document.querySelector(".news-feed-detail");
-  document.querySelectorAll(".news-feed-tab").forEach((button) => {
-    button.addEventListener("click", () => {
-      const data = newsData[button.dataset.news];
-      if (!data || !newsDetail) return;
-      document.querySelectorAll(".news-feed-tab").forEach((item) => {
-        const active = item === button;
-        item.classList.toggle("active", active);
-        item.setAttribute("aria-selected", String(active));
-      });
-      newsDetail.innerHTML = `<span class="news-feed-date">${data.date}</span><h3>${data.title}</h3><p>${data.copy}</p><a href="${data.link}"${data.link.startsWith("http") ? ' target="_blank" rel="noopener"' : ""}>${data.action}</a>`;
-    });
-  });
-
   const metricData = {
     eeg: ["EEG METRICS", "Quantifies neural rhythms, peak alpha frequency, and frontal alpha asymmetry for interpretable brain-function summaries."],
     fnirs: ["fNIRS METRICS", "Transforms hemoglobin dynamics into HbO, HbR, HbT, integral, centroid, and activation indicators for regional hemodynamic interpretation."],
