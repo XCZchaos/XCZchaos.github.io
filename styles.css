@@ -2459,6 +2459,107 @@ html[data-theme="light"] .moon-icon {
   background: #fff;
 }
 
+.news-section {
+  position: relative;
+  padding: 32px 0 18px;
+}
+
+.news-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 34px;
+  overflow: hidden;
+  padding: 28px 30px;
+  border: 1px solid var(--line-strong);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 10% 50%, rgba(99, 243, 204, .15), transparent 24%),
+    linear-gradient(105deg, rgba(107, 167, 255, .10), transparent 58%),
+    var(--panel);
+  box-shadow: 0 18px 55px rgba(4, 10, 18, .10);
+}
+
+.news-card::after {
+  position: absolute;
+  top: -78px;
+  right: 14%;
+  width: 190px;
+  height: 190px;
+  border: 1px solid rgba(99, 243, 204, .16);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.news-status,
+.news-copy,
+.news-action {
+  position: relative;
+  z-index: 1;
+}
+
+.news-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.news-status small {
+  color: var(--text);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .09em;
+}
+
+.news-pulse {
+  position: relative;
+  width: 13px;
+  height: 13px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 18px rgba(99, 243, 204, .7);
+}
+
+.news-pulse::after {
+  position: absolute;
+  inset: -7px;
+  border: 1px solid rgba(99, 243, 204, .38);
+  border-radius: 50%;
+  content: "";
+  animation: news-radar 2.2s ease-out infinite;
+}
+
+@keyframes news-radar {
+  0% { opacity: .8; transform: scale(.65); }
+  75%, 100% { opacity: 0; transform: scale(1.55); }
+}
+
+.news-copy .kicker {
+  margin-bottom: 8px;
+}
+
+.news-copy h2 {
+  margin: 0 0 8px;
+  font-size: clamp(22px, 2.4vw, 34px);
+  letter-spacing: -.035em;
+  line-height: 1.08;
+}
+
+.news-copy > p:last-child {
+  max-width: 760px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.65;
+}
+
+.news-action {
+  white-space: nowrap;
+}
+
 .delivery-pipeline {
   position: relative;
   overflow: hidden;
@@ -2730,6 +2831,15 @@ html[data-theme="light"] .moon-icon {
   .pipeline-stages section::after {
     display: none;
   }
+
+  .news-card {
+    grid-template-columns: 145px minmax(0, 1fr);
+  }
+
+  .news-action {
+    grid-column: 2;
+    justify-self: start;
+  }
 }
 
 @media (max-width: 760px) {
@@ -2775,5 +2885,19 @@ html[data-theme="light"] .moon-icon {
 
   .company-line {
     align-items: flex-start;
+  }
+
+  .news-section {
+    padding-top: 20px;
+  }
+
+  .news-card {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 24px;
+  }
+
+  .news-action {
+    grid-column: 1;
   }
 }
