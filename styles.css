@@ -2432,7 +2432,14 @@ html[data-theme="light"] .moon-icon {
 }
 
 .project-grid > .project-card:not(.project-featured) {
-  grid-column: span 4;
+  grid-column: span 6;
+}
+
+.company-note {
+  margin: -12px 0 18px;
+  color: var(--accent);
+  font-size: 11px;
+  line-height: 1.65;
 }
 
 .project-sdk {
@@ -2498,10 +2505,6 @@ html[data-theme="light"] .moon-icon {
 @media (max-width: 1020px) {
   .project-grid > .project-card:not(.project-featured) {
     grid-column: span 6;
-  }
-
-  .project-grid > .project-card:not(.project-featured):last-child {
-    grid-column: 1 / -1;
   }
 
   .project-sdk {
