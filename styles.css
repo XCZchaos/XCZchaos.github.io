@@ -3474,6 +3474,70 @@ body.dialog-open {
   }
 }
 
+/* Layout correction: keep the hero copy and portrait in one full-width row. */
+.hero {
+  display: block;
+}
+
+.hero-grid {
+  width: min(calc(100% - 48px), var(--container));
+}
+
+.hero-copy,
+.hero-visual,
+.project-card,
+.project-copy,
+.project-graphic,
+.dialog-star section,
+.pipeline-stage {
+  min-width: 0;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-visual {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1,
+.hero-lead,
+.project-copy h3,
+.project-copy p,
+.dialog-star p,
+.pipeline-stage p {
+  overflow-wrap: break-word;
+}
+
+.dialog-star section {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
+.dialog-star h3 {
+  margin-top: 28px;
+}
+
+.dialog-star p {
+  flex: 1 1 auto;
+}
+
+@media (max-width: 1020px) {
+  .hero-grid {
+    width: min(calc(100% - 40px), var(--container));
+  }
+}
+
+@media (max-width: 580px) {
+  .hero-grid {
+    width: min(calc(100% - 26px), var(--container));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .news-pulse::after,
   .pipeline-detail.detail-flash {
