@@ -2,12 +2,66 @@
   const doc = document.documentElement;
   const header = document.querySelector(".site-header");
   const themeToggle = document.querySelector(".theme-toggle");
+  const languageToggle = document.querySelector(".language-toggle");
   const navToggle = document.querySelector(".nav-toggle");
   const navLinks = document.querySelector(".nav-links");
   const cursorGlow = document.querySelector(".cursor-glow");
   const orbitalCard = document.querySelector(".orbital-card");
   const scrollProgress = document.querySelector(".scroll-progress span");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const zhText = window.YIBO_I18N_ZH || {};
+  const zhAttrs = window.YIBO_I18N_ATTR_ZH || {};
+  const originalTextNodes = new WeakMap();
+  const originalAttributes = new WeakMap();
+  let currentLanguage = localStorage.getItem("language") === "zh" ? "zh" : "en";
+
+  const normalizeText = (value) => value.trim().replace(/\s+/g, " ");
+  const t = (value) => currentLanguage === "zh" ? (zhText[normalizeText(value)] || value) : value;
+
+  function applyLanguage(language) {
+    currentLanguage = language;
+    doc.lang = language === "zh" ? "zh-CN" : "en";
+    doc.dataset.language = language;
+    localStorage.setItem("language", language);
+
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+    let node = walker.nextNode();
+    while (node) {
+      const parent = node.parentElement;
+      if (parent && !parent.closest("script, style, [data-i18n-ignore]")) {
+        if (!originalTextNodes.has(node)) originalTextNodes.set(node, node.nodeValue);
+        const original = originalTextNodes.get(node);
+        const key = normalizeText(original);
+        const translated = zhText[key];
+        const leading = original.match(/^\s*/)?.[0] || "";
+        const trailing = original.match(/\s*$/)?.[0] || "";
+        node.nodeValue = language === "zh" && translated ? `${leading}${translated}${trailing}` : original;
+      }
+      node = walker.nextNode();
+    }
+
+    document.querySelectorAll("[aria-label], [alt], meta[content]").forEach((element) => {
+      ["aria-label", "alt", "content"].forEach((attribute) => {
+        if (!element.hasAttribute(attribute)) return;
+        let saved = originalAttributes.get(element);
+        if (!saved) {
+          saved = {};
+          originalAttributes.set(element, saved);
+        }
+        if (!(attribute in saved)) saved[attribute] = element.getAttribute(attribute);
+        const original = saved[attribute];
+        element.setAttribute(attribute, language === "zh" && zhAttrs[original] ? zhAttrs[original] : original);
+      });
+    });
+
+    if (languageToggle) {
+      languageToggle.querySelector("span").textContent = language === "zh" ? "EN" : "中文";
+      languageToggle.setAttribute("aria-label", language === "zh" ? "Switch to English" : "切换至中文");
+      languageToggle.setAttribute("title", language === "zh" ? "Switch to English" : "切换至中文");
+    }
+  }
+
+  applyLanguage(currentLanguage);
 
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme) {
@@ -20,6 +74,15 @@
     const next = doc.dataset.theme === "dark" ? "light" : "dark";
     doc.dataset.theme = next;
     localStorage.setItem("theme", next);
+  });
+
+  languageToggle?.addEventListener("click", () => {
+    applyLanguage(currentLanguage === "en" ? "zh" : "en");
+    document.querySelector(".pipeline-stage.active")?.click();
+    document.querySelector(".metric-option.active")?.click();
+    const selectedFilter = document.querySelector(".project-filter.active");
+    if (selectedFilter) updateProjectCount(selectedFilter.dataset.filter);
+    if (projectDialog?.open && dialogTrigger) populateProjectDialog(projectData[dialogTrigger.dataset.projectOpen]);
   });
 
   navToggle?.addEventListener("click", () => {
@@ -162,7 +225,7 @@
         item.classList.toggle("active", active);
         item.setAttribute("aria-pressed", String(active));
       });
-      pipelineDetail.innerHTML = `<span>SELECTED STAGE · ${data.index}</span><div><h4>${data.title}</h4><p>${data.copy}</p></div><strong>${data.evidence}</strong>`;
+      pipelineDetail.innerHTML = `<span>${currentLanguage === "zh" ? "当前阶段" : "SELECTED STAGE"} · ${data.index}</span><div><h4>${t(data.title)}</h4><p>${t(data.copy)}</p></div><strong>${t(data.evidence)}</strong>`;
       pipelineDetail.classList.remove("detail-flash");
       requestAnimationFrame(() => pipelineDetail.classList.add("detail-flash"));
     });
@@ -185,27 +248,35 @@
         item.classList.toggle("active", active);
         item.setAttribute("aria-pressed", String(active));
       });
-      metricDetail.innerHTML = `<span>${data[0]}</span><p>${data[1]}</p>`;
+      metricDetail.innerHTML = `<span>${t(data[0])}</span><p>${t(data[1])}</p>`;
     });
   });
 
   const projectCards = [...document.querySelectorAll(".project-card[data-project-tags]")];
   const projectCount = document.querySelector(".project-count");
+  function updateProjectCount(filter) {
+    let visible = 0;
+    projectCards.forEach((card) => {
+      const match = filter === "all" || card.dataset.projectTags.split(" ").includes(filter);
+      card.hidden = !match;
+      if (match) visible += 1;
+    });
+    if (projectCount) {
+      projectCount.textContent = currentLanguage === "zh"
+        ? `${visible} 个项目`
+        : `${visible} project${visible === 1 ? "" : "s"}`;
+    }
+    return visible;
+  }
   document.querySelectorAll(".project-filter").forEach((button) => {
     button.addEventListener("click", () => {
       const filter = button.dataset.filter;
-      let visible = 0;
       document.querySelectorAll(".project-filter").forEach((item) => {
         const active = item === button;
         item.classList.toggle("active", active);
         item.setAttribute("aria-pressed", String(active));
       });
-      projectCards.forEach((card) => {
-        const match = filter === "all" || card.dataset.projectTags.split(" ").includes(filter);
-        card.hidden = !match;
-        if (match) visible += 1;
-      });
-      if (projectCount) projectCount.textContent = `${visible} project${visible === 1 ? "" : "s"}`;
+      updateProjectCount(filter);
     });
   });
 
@@ -254,18 +325,22 @@
 
   const projectDialog = document.querySelector(".project-dialog");
   let dialogTrigger = null;
+  function populateProjectDialog(data) {
+    if (!data || !projectDialog) return;
+    projectDialog.querySelector(".dialog-type").textContent = t(data.type);
+    projectDialog.querySelector("#dialog-title").textContent = t(data.title);
+    projectDialog.querySelector(".dialog-summary").textContent = t(data.summary);
+    projectDialog.querySelectorAll("[data-dialog-field]").forEach((field) => {
+      field.textContent = t(data[field.dataset.dialogField]);
+    });
+    projectDialog.querySelector(".dialog-stack").textContent = data.stack;
+  }
   document.querySelectorAll("[data-project-open]").forEach((button) => {
     button.addEventListener("click", () => {
       const data = projectData[button.dataset.projectOpen];
       if (!data || !projectDialog) return;
       dialogTrigger = button;
-      projectDialog.querySelector(".dialog-type").textContent = data.type;
-      projectDialog.querySelector("#dialog-title").textContent = data.title;
-      projectDialog.querySelector(".dialog-summary").textContent = data.summary;
-      projectDialog.querySelectorAll("[data-dialog-field]").forEach((field) => {
-        field.textContent = data[field.dataset.dialogField];
-      });
-      projectDialog.querySelector(".dialog-stack").textContent = data.stack;
+      populateProjectDialog(data);
       if (typeof projectDialog.showModal === "function") projectDialog.showModal();
       else projectDialog.setAttribute("open", "");
       document.body.classList.add("dialog-open");
@@ -300,9 +375,9 @@
     button.addEventListener("click", async () => {
       try {
         await navigator.clipboard.writeText(button.dataset.copyEmail);
-        showToast("Email copied to clipboard");
+        showToast(t("Email copied to clipboard"));
       } catch {
-        showToast("Email: asherxiong552@gmail.com");
+        showToast(t("Email: asherxiong552@gmail.com"));
       }
     });
   });
