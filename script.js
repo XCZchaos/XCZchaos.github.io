@@ -171,9 +171,9 @@
   const newsData = {
     competition: {
       date: "SEP 2026 · OPEN",
-      title: "Open to BCI competition collaboration",
-      copy: "Welcoming team invitations involving physiological signal algorithms, multimodal learning, real-time inference, or BCI system development.",
-      link: "mailto:asherxiong552@gmail.com?subject=BCI%20Competition%20Collaboration",
+      title: "Open to BCI competitions, research, and project collaboration",
+      copy: "Welcoming competition teams, research partners, open-source contributors, and project collaborators working on physiological signal algorithms, multimodal learning, real-time inference, or BCI systems.",
+      link: "mailto:asherxiong552@gmail.com?subject=BCI%20Research%20or%20Project%20Collaboration",
       action: "Discuss collaboration ↗",
     },
     paper: {
