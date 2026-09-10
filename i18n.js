@@ -32,11 +32,14 @@ window.YIBO_I18N_ZH = {
   "First-author journal paper": "第一作者期刊论文",
   "Granted invention patent": "已授权发明专利",
   "Academic & competition awards": "学业与竞赛荣誉",
-  "OPEN TO COLLABORATE": "欢迎合作",
-  "NEWS · WELCOME TO COLLABORATE": "合作 · 欢迎联系",
-  "Welcome to collaborate on BCI research and projects.": "欢迎开展 BCI 研究与项目合作。",
-  "If you are forming a BCI competition team, developing an open-source project, or exploring research or engineering collaboration in EEG/fNIRS, multimodal biosignals, deep learning, or wearable neurotechnology, feel free to contact me.": "如果你正在组建 BCI 竞赛团队、开发开源项目，或希望围绕 EEG/fNIRS、多模态生理信号、深度学习及可穿戴神经技术开展科研或工程合作，欢迎联系我。",
-  "Contact by email": "邮件联系",
+  "OPEN SOURCE · CONTRIBUTORS WANTED": "开源项目 · 招募贡献者",
+  "NEWS · NEUROFLOW": "动态 · NEUROFLOW",
+  "Building NeuroFlow—an intelligent workspace for neurophysiological signals.": "共建 NeuroFlow——面向神经生理信号的智能工作台。",
+  "NeuroFlow connects local EEG, MEG, and fNIRS dataset inspection with a Go/Eino ReAct Agent, MNE-Python tools, and a RAG knowledge layer. Its first trusted-workspace capabilities are available; the next milestone is deterministic EEG/EMG analysis and multimodal workflows.": "NeuroFlow 将本地 EEG、MEG 与 fNIRS 数据检查，同 Go/Eino ReAct Agent、MNE-Python 工具和 RAG 知识层连接起来。目前可信工作台的首批能力已经可用，下一阶段将重点开发确定性的 EEG/EMG 分析工具与多模态工作流。",
+  "Looking for collaborators:": "招募合作方向：",
+  "signal-processing tools · Agent workflows · public-dataset benchmarks · desktop UI and visualization.": "信号处理工具 · Agent 工作流 · 公开数据集基准测试 · 桌面端与可视化。",
+  "Explore NeuroFlow": "查看 NeuroFlow",
+  "Collaborate by email": "邮件参与合作",
   "Profile": "个人简介",
   "Research mindset.": "研究思维。",
   "Engineering execution.": "工程落地。",
@@ -274,5 +277,6 @@ window.YIBO_I18N_ATTR_ZH = {
   "Jiangxi Agricultural University logo": "江西农业大学校徽",
   "Rongnao Technology logo": "荣脑科技标志",
   "Naohuilu Technology logo": "脑回录科技标志",
-  "Close project details": "关闭项目详情"
+  "Close project details": "关闭项目详情",
+  "NeuroFlow technology stack": "NeuroFlow 技术栈"
 };
