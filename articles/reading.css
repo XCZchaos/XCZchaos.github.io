@@ -1,0 +1,40 @@
+/* Only loaded by the optional reading index. The portfolio retains its original stylesheet. */
+.reading-main { padding-block: clamp(112px,13vh,150px) 76px; }
+.reading-back { margin:0 0 28px; }
+.reading-page .notes-section { padding:0; }
+.reading-page .notes-credit { font-family:ui-monospace,monospace; }
+.notebook-lab { margin:38px 0 0; padding:14px 0; border-block:1px solid var(--line); }
+.notebook-lab summary { cursor:pointer; color:var(--text); width:fit-content; font-weight:650; }
+.notebook-lab .signal-plate { max-width:610px; margin:20px 0; }
+.signal-plate { --paper:#f4f6ef; --trace:#23697c; margin:0; padding:clamp(18px,2.2vw,30px); min-width:0; color:#18323e; background:var(--paper); border:1px solid #bbc9be; border-radius:16px; box-shadow:0 5px 0 -2px #a8b6a5; }
+.plate-head { display:flex; align-items:center; gap:14px; }
+.plate-head img { display:block; width:48px; height:60px; border-radius:5px; object-fit:cover; }
+.plate-head #trace-title { color:#213b47; font:600 clamp(21px,2.15vw,30px)/1.2 Georgia,'Songti SC','Noto Serif CJK SC',serif; }
+.plate-head p { color:#51646b; font-size:14px; margin:.3em 0 0; }
+.trace-choices { display:flex; flex-wrap:wrap; gap:5px; margin:20px 0 2px; }
+.trace-choices button { line-height:1.2; font-family:inherit; font-size:14px; font-weight:600; min-height:36px; padding:5px 12px; color:#42585f; border:1px solid transparent; border-radius:5px; background:transparent; cursor:pointer; }
+.trace-choices button[aria-pressed="true"] { border-color:#2f6573; color:#fff; background:#225566; }
+.trace-choices button:hover:not([aria-pressed="true"]) { border-color:#879e9f; }
+.trace-window { border-block:1px solid #bac9c3; padding:8px 0; }
+.trace-window svg { display:block; width:100%; height:clamp(88px,9.5vw,136px); color:#adbfb9; }
+.trace-baseline { stroke:#91a79f; stroke-width:.9; stroke-dasharray:4 4; }
+.trace-wave { fill:none; stroke:var(--trace); stroke-width:1.9; stroke-linejoin:round; stroke-linecap:round; vector-effect:non-scaling-stroke; }
+.trace-axis { display:flex; justify-content:space-between; padding:0 2.4%; color:#465c63; font-size:12px; font-variant-numeric:tabular-nums; }
+.trace-caption { min-height:2.8em; margin:13px 0 0; font-size:15px; line-height:1.5; color:#314a54; }
+.notes-section { padding:clamp(48px,7vw,100px) 0; scroll-margin-top:68px; }
+.notes-layout { display:grid; grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr); gap:clamp(32px,7vw,100px); }
+.notes-layout header { align-self:start; }
+.notes-credit { margin:0 0 12px; font-size:15px; color:var(--accent); }
+.notes-layout h1 { margin:0 0 12px; color:var(--text); font-size:clamp(32px,3.8vw,55px); line-height:1.2; letter-spacing:-.035em; }
+.notes-layout header > p:last-child { margin:0; max-width:39ch; font-size:18px; line-height:1.7; color:var(--muted); }
+.notes-part + .notes-part { margin-top:24px; }
+.notes-part h3 { margin:0 0 6px; color:var(--muted); font-size:14px; font-weight:600; }
+.notes-part ol { list-style:none; padding:0; margin:0; }
+.notes-part li { border-top:1px solid var(--line-strong); }
+.notes-part li:last-child { border-bottom:1px solid var(--line-strong); }
+.notes-part a { display:grid; grid-template-columns:2em minmax(0,1fr); gap:.4rem; align-items:baseline; padding:.7rem 0; font-size:clamp(16px,1.55vw,20px); line-height:1.5; color:var(--text); }
+.entry-number { color:var(--accent); font-size:14px; font-variant-numeric:tabular-nums; }
+
+.notes-index a:hover, .reading-back:hover { text-decoration:underline; text-underline-offset:.2em; }
+.reading-main :where(a,button,summary):focus-visible { outline:2px solid var(--accent-2); outline-offset:3px; }
+@media(max-width:820px) { .notes-layout {grid-template-columns:minmax(0,1fr); gap:26px;} .reading-main {padding-top:102px;} }

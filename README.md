@@ -1,12 +1,12 @@
-# XCZchaos · Signal notebook
+# XCZchaos · Portfolio
 
 [![XCZchaos — Wearable signal processing](assets/og-cover.svg)](https://xczchaos.github.io/)
 
 [个人主页 / Portfolio](https://xczchaos.github.io/) · [NeuroFlow v0.2](https://github.com/XCZchaos/NeuroFlow/tree/v0.2) · [邮件联系](mailto:asherxiong552@gmail.com)
 
-这里记录我在可穿戴生理信号、脑机接口和开源分析工具上的工作。首页可以切换中文和英文，查看项目案例，或比较 EEG、PPG 与 fNIRS 三种模拟波形。欢迎联系我组队参加 BCI 比赛、交流研究，或一起开发开源项目。
+这里记录我在可穿戴生理信号、脑机接口和开源分析工具上的工作。首页可以切换中英文并查看项目案例；[脑机接口专栏](https://xczchaos.github.io/articles/)收录七篇全文入口，另附 EEG、PPG 与 fNIRS 模拟波形。欢迎联系我组队参加 BCI 比赛、交流研究，或一起开发开源项目。
 
-The portfolio brings together wearable signal processing, engineering case studies, and NeuroFlow. The waveform examples are synthetic. I welcome research collaborations, BCI competition teammates, and open-source contributors.
+The portfolio brings together wearable signal processing, engineering case studies, and NeuroFlow. The [BCI reading series](https://xczchaos.github.io/articles/) also includes three synthetic waveform examples. I welcome research collaborations, BCI competition teammates, and open-source contributors.
 
 ## 脑机接口专栏 / Reading series
 

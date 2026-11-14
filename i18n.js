@@ -317,3 +317,8 @@ Object.assign(window.YIBO_I18N_ATTR_ZH, {
   "Choose a signal": "选择信号类型",
   "Close navigation": "关闭导航"
 });
+
+Object.assign(window.YIBO_I18N_ZH, {
+  "Back to portfolio": "返回个人主页",
+  "Explore simulated signals": "查看模拟波形"
+});
