@@ -280,3 +280,40 @@ window.YIBO_I18N_ATTR_ZH = {
   "Close project details": "关闭项目详情",
   "NeuroFlow technology stack": "NeuroFlow 技术栈"
 };
+
+Object.assign(window.YIBO_I18N_ZH, {
+  "Signal notebook": "信号笔记",
+  "Articles": "文章专栏",
+  "Algorithm engineer · UCAS": "算法工程师 · 中国科学院大学",
+  "I work with EEG and fNIRS recordings: cleaning signals, modeling changes in cognitive and sleep states, and bringing the algorithms to Windows and Android products.": "我处理 EEG 和 fNIRS 信号，研究怎样从记录中识别认知负荷与睡眠状态，并将算法部署到 Windows 和 Android 产品。",
+  "Explore projects": "查看项目",
+  "Read the BCI series": "阅读脑机接口专栏",
+  "Simulated recordings": "模拟波形",
+  "EEG · A simulated 10 Hz rhythm in a two-second window.": "EEG｜在两秒窗口内观察模拟的 10 Hz 节律。",
+  "PPG · Six simulated pulses, each with a fast rise and a slower return.": "PPG｜六次模拟脉搏，观察波峰如何快速上升、逐渐回落。",
+  "fNIRS · A slow, simulated change in oxygenated hemoglobin after a stimulus.": "fNIRS｜模拟一次刺激后，含氧血红蛋白随时间缓慢变化的过程。",
+  "Open for collaboration": "欢迎合作",
+  "Open source · v0.2": "开源项目 · v0.2",
+  "NeuroFlow: a local workbench for neural signals": "NeuroFlow：本地神经信号分析工作台",
+  "In v0.2, a ReAct agent checks the recording and asks for missing acquisition details. Python and MNE run the signal processing; the workbench keeps the processing parameters and quality reports with the results.": "在 v0.2 中，ReAct Agent 检查记录，遇到不完整的采集参数会先询问。Python 和 MNE 执行信号处理，工作台将参数和质量报告与结果一并保存。",
+  "I welcome BCI competition teams, research partners, and contributors to signal tools and public-dataset benchmarks.": "欢迎联系我组队参加脑机接口比赛、开展研究，或一起开发信号处理工具和公开数据集基准。",
+  "Explore the v0.2 source": "查看 v0.2 源码",
+  "BCI field notes": "脑机接口笔记",
+  "Seven original articles in Chinese, with their derivations, code examples, illustrations, and references.": "七篇中文原创文章，按学习顺序编排，正文保留推导、代码示例、配图和参考资料。",
+  "Foundations": "基础概念",
+  "Signal methods": "信号处理",
+  "Models and sleep": "模型与睡眠",
+  "Brain–computer interfaces: concepts and history": "脑机接口的基础概念与发展史",
+  "Understanding the origins of EEG": "EEG 脑电信号的基础原理与分析",
+  "EEG preprocessing: from raw recordings to usable data": "从原始脑电到可分析数据：EEG 信号预处理方法",
+  "From waveforms to machine learning: EEG feature extraction": "从波形到机器学习：EEG 信号特征提取方法",
+  "How CNNs learn features from EEG": "从 EEG 波形到结果：CNN 如何学习脑电特征",
+  "From attention to EEG decoding with Transformers": "从注意力机制到脑电解码：Transformer 的 EEG 特征学习",
+  "From sleep architecture to EEG sleep staging": "理解睡眠与 EEG 脑电信号：从睡眠结构到睡眠分期"
+});
+Object.assign(window.YIBO_I18N_ATTR_ZH, {
+  "XCZchaos home": "XCZchaos 主页",
+  "Portrait of the author": "作者头像",
+  "Choose a signal": "选择信号类型",
+  "Close navigation": "关闭导航"
+});

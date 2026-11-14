@@ -5,13 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Yibo Xiong — Wearable Biosignal Algorithm Engineer building cross-platform SDKs and deployable systems for EEG, fNIRS, ECG, PPG, ACC, and multimodal physiological signals." />
   <meta name="theme-color" content="#070b14" />
-  <meta property="og:title" content="Yibo Xiong — Wearable Biosignal Algorithm Engineer" />
+  <meta property="og:title" content="XCZchaos · Wearable signal processing" />
   <meta property="og:description" content="Algorithms and intelligent systems for wearable biosignals." />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/og-cover.svg" />
-  <title>Yibo Xiong — Wearable Biosignal Algorithm Engineer</title>
+  <meta property="og:image" content="https://xczchaos.github.io/assets/social-preview.png" />
+  <title>XCZchaos · Wearable signal processing</title>
+  <link rel="canonical" href="https://xczchaos.github.io/" />
+  <script>
+    (() => { const d = document.documentElement;
+      let lang = /^zh/i.test(navigator.language || '') ? 'zh' : 'en';
+      let theme = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      try { const l = localStorage.getItem('language'), t = localStorage.getItem('theme');
+        if (l === 'en' || l === 'zh') lang = l; if (t === 'dark' || t === 'light') theme = t;
+      } catch {} d.dataset.language = lang; d.dataset.theme = theme; d.lang = lang === 'zh' ? 'zh-CN' : 'en';
+    })();
+  </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-  <link rel="stylesheet" href="styles.css?v=20260910a" />
+  <link rel="stylesheet" href="styles.css?v=20261114" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -38,26 +48,25 @@
   <a class="skip-link" href="#main-content">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
 
-  <canvas id="neural-canvas" aria-hidden="true"></canvas>
-  <div class="noise" aria-hidden="true"></div>
-  <div class="cursor-glow" aria-hidden="true"></div>
+
 
   <header class="site-header">
     <nav class="nav container" aria-label="Primary navigation">
-      <a class="brand" href="#top" aria-label="Yibo Xiong home">
-        <span class="brand-mark">YX</span>
+      <a class="brand" href="#top" aria-label="XCZchaos home">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 30" fill="none"><path d="M2 16h6l3-5 4 13 5-20 4 17 3-5h7" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
         <span class="brand-copy">
-          <strong>Yibo Xiong</strong>
-          <small>Wearable Biosignals · AI · Systems</small>
+          <strong>XCZchaos</strong>
+          <small>Signal notebook</small>
         </span>
       </a>
 
-      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-sections">
         <span></span><span></span><span></span>
       </button>
 
-      <div class="nav-links">
-        <a href="#news">News</a>
+      <div class="nav-links" id="site-sections">
+        <a href="#news">NeuroFlow</a>
+        <a href="#articles">Articles</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#work">Projects</a>
@@ -88,69 +97,27 @@
         <div class="hero-copy reveal">
           <div class="eyebrow">
             <span class="status-dot"></span>
-            Wearable Biosignal Algorithm Engineer · M.Eng. Student
+            Algorithm engineer · UCAS
           </div>
 
-          <h1 class="hero-title-en"><span>Building intelligent systems</span> <span class="gradient-text">for wearable biosignals.</span></h1>
-          <h1 class="hero-title-zh" data-i18n-ignore>构建智能系统面向可穿戴生理信号。</h1>
-
-          <p class="hero-lead hero-lead-en">I design and develop algorithms across the wearable biosignal pipeline—from <strong>EEG and fNIRS preprocessing</strong> to multimodal representation learning, physiological metrics, real-time inference, cross-platform SDKs, and report-ready products.</p>
-          <p class="hero-lead hero-lead-zh" data-i18n-ignore>我负责可穿戴生理信号全链路的算法设计与开发——涵盖<strong>EEG 与 fNIRS 预处理</strong>、多模态表征学习、生理指标计算、实时推理、跨平台 SDK 与报告产品化。</p>
-
+          <h1 class="notebook-title" data-i18n-ignore><span class="hero-title-en" lang="en">Wearable signal processing</span><span class="hero-title-zh" lang="zh-CN">可穿戴生理信号算法</span></h1>
+          <p class="notebook-lead">I work with EEG and fNIRS recordings: cleaning signals, modeling changes in cognitive and sleep states, and bringing the algorithms to Windows and Android products.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#work">
-              Explore selected work
+              Explore projects
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
             </a>
-            <a class="button button-ghost" href="https://github.com/XCZchaos" target="_blank" rel="noopener">GitHub ↗</a>
+            <a class="button button-ghost" href="#articles">Read the BCI series</a>
           </div>
 
-          <div class="hero-meta">
-            <a href="mailto:asherxiong552@gmail.com">
-              <span>Email</span>
-              asherxiong552@gmail.com
-            </a>
-            <span class="meta-divider"></span>
-            <span>
-              <span>Focus</span>
-              Wearable Biosignals · Multimodal Learning
-            </span>
-          </div>
+          <p class="byline-links"><a href="https://github.com/XCZchaos" rel="me">@XCZchaos</a><span aria-hidden="true">/</span><a href="mailto:asherxiong552@gmail.com">asherxiong552@gmail.com</a></p>
         </div>
-
-        <div class="hero-visual reveal" aria-label="Interactive neural signal visualization">
-          <div class="orbital-card portrait-orbit">
-            <img class="hero-portrait" fetchpriority="high" decoding="async" src="assets/profile.webp" onerror="this.onerror=null;this.src='assets/profile.svg'" alt="Portrait of Yibo Xiong" />
-            <div class="portrait-shade"></div>
-            <div class="orbital-ring ring-one"></div>
-            <div class="orbital-ring ring-two"></div>
-            <div class="portrait-signature"><span>YIBO XIONG</span><strong>Brain · AI · Systems</strong></div>
-            <div class="signal-chip chip-eeg"><span class="chip-dot"></span>EEG<small>electrical</small></div>
-            <div class="signal-chip chip-fnirs"><span class="chip-dot"></span>fNIRS<small>hemodynamic</small></div>
-            <div class="signal-chip chip-ai"><span class="chip-dot"></span>AI<small>representation</small></div>
-            <svg class="wave wave-one" viewBox="0 0 520 140" preserveAspectRatio="none" aria-hidden="true"><path d="M0,74 C25,74 24,74 42,74 C58,74 61,18 73,18 C86,18 88,118 104,118 C120,118 122,54 138,54 C155,54 153,74 173,74 C191,74 195,74 212,74 C228,74 230,39 246,39 C263,39 264,102 279,102 C296,102 299,64 316,64 C334,64 337,74 356,74 C375,74 377,74 398,74 C415,74 419,28 434,28 C449,28 452,112 468,112 C485,112 489,74 520,74"></path></svg>
-            <div class="metric-panel"><div><small>Research</small><strong>EEG Foundation Models</strong></div><div><small>Modalities</small><strong>EEG + fNIRS</strong></div><div><small>Engineering</small><strong>Real-time Systems</strong></div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container stat-strip reveal">
-        <article>
-          <strong data-count="2">0</strong>
-          <span>Algorithm engineering roles</span>
-        </article>
-        <article>
-          <strong data-count="1">0</strong>
-          <span>First-author journal paper</span>
-        </article>
-        <article>
-          <strong data-count="1">0</strong>
-          <span>Granted invention patent</span>
-        </article>
-        <article>
-          <strong data-count="5">0</strong>
-          <span>Academic & competition awards</span>
-        </article>
+        <figure class="signal-plate" aria-labelledby="trace-title">
+          <figcaption class="plate-head"><img src="assets/portrait.jpg" width="56" height="70" alt="Portrait of the author" decoding="async" /><div><strong id="trace-title">Signal notebook</strong><p>Simulated recordings</p></div></figcaption>
+          <div class="trace-choices" role="group" aria-label="Choose a signal"><button type="button" data-trace="eeg" aria-pressed="true">EEG</button><button type="button" data-trace="ppg" aria-pressed="false">PPG</button><button type="button" data-trace="fnirs" aria-pressed="false">fNIRS</button></div>
+          <div class="trace-window"><svg viewBox="0 0 480 126" preserveAspectRatio="none" aria-hidden="true"><defs><pattern id="trace-grid" width="38" height="24" patternUnits="userSpaceOnUse" x="12" y="15"><path d="M 38 0 H 0 V 24" fill="none" stroke="currentColor" stroke-width=".7"/></pattern></defs><rect width="480" height="126" fill="url(#trace-grid)"/><path d="M12 63H468" class="trace-baseline"/><path data-wave="eeg" class="trace-wave" d="M12.00,60.44 L13.27,48.22 L14.53,38.87 L15.80,33.72 L17.07,33.12 L18.33,36.47 L19.60,42.52 L20.87,49.81 L22.13,57.07 L23.40,63.55 L24.67,68.99 L25.93,73.56 L27.20,77.45 L28.47,80.66 L29.73,82.78 L31.00,83.08 L32.27,80.69 L33.53,75.05 L34.80,66.20 L36.07,55.05 L37.33,43.28 L38.60,33.05 L39.87,26.50 L41.13,25.17 L42.40,29.62 L43.67,39.19 L44.93,52.18 L46.20,66.22 L47.47,78.90 L48.73,88.25 L50.00,93.21 L51.27,93.69 L52.53,90.44 L53.80,84.70 L55.07,77.73 L56.33,70.52 L57.60,63.58 L58.87,57.06 L60.13,50.91 L61.40,45.27 L62.67,40.58 L63.93,37.70 L65.20,37.67 L66.47,41.38 L67.73,49.15 L69.00,60.46 L70.27,73.88 L71.53,87.22 L72.80,98.03 L74.07,104.18 L75.33,104.37 L76.60,98.47 L77.87,87.58 L79.13,73.74 L80.40,59.44 L81.67,46.99 L82.93,38.08 L84.20,33.47 L85.47,33.00 L86.73,35.85 L88.00,40.93 L89.27,47.24 L90.53,54.14 L91.80,61.35 L93.07,68.78 L94.33,76.30 L95.60,83.43 L96.87,89.27 L98.13,92.59 L99.40,92.19 L100.67,87.23 L101.93,77.72 L103.20,64.62 L104.47,49.85 L105.73,35.91 L107.00,25.33 L108.27,20.06 L109.53,21.06 L110.80,27.98 L112.07,39.37 L113.33,53.03 L114.60,66.56 L115.87,77.91 L117.13,85.79 L118.40,89.82 L119.67,90.34 L120.93,88.16 L122.20,84.12 L123.47,78.86 L124.73,72.66 L126.00,65.56 L127.27,57.62 L128.53,49.19 L129.80,41.08 L131.07,34.56 L132.33,31.12 L133.60,32.03 L134.87,37.95 L136.13,48.55 L137.40,62.45 L138.67,77.43 L139.93,90.88 L141.20,100.40 L142.47,104.36 L143.73,102.29 L145.00,94.92 L146.27,83.94 L147.53,71.53 L148.80,59.80 L150.07,50.34 L151.33,43.97 L152.60,40.72 L153.87,40.08 L155.13,41.37 L156.40,44.08 L157.67,47.98 L158.93,53.16 L160.20,59.78 L161.47,67.78 L162.73,76.61 L164.00,85.14 L165.27,91.84 L166.53,95.08 L167.80,93.63 L169.07,87.10 L170.33,76.14 L171.60,62.42 L172.87,48.31 L174.13,36.32 L175.40,28.54 L176.67,26.10 L177.93,29.02 L179.20,36.24 L180.47,46.00 L181.73,56.32 L183.00,65.54 L184.27,72.61 L185.53,77.26 L186.80,79.74 L188.07,80.62 L189.33,80.36 L190.60,79.11 L191.87,76.65 L193.13,72.57 L194.40,66.56 L195.67,58.76 L196.93,49.92 L198.20,41.43 L199.47,34.99 L200.73,32.24 L202.00,34.25 L203.27,41.11 L204.53,51.87 L205.80,64.65 L207.07,77.13 L208.33,87.04 L209.60,92.77 L210.87,93.69 L212.13,90.23 L213.40,83.67 L214.67,75.68 L215.93,67.87 L217.20,61.38 L218.47,56.65 L219.73,53.55 L221.00,51.57 L222.27,50.25 L223.53,49.41 L224.80,49.32 L226.07,50.58 L227.33,53.84 L228.60,59.44 L229.87,67.11 L231.13,75.83 L232.40,84.03 L233.67,89.91 L234.93,91.92 L236.20,89.29 L237.47,82.21 L238.73,71.94 L240.00,60.44 L241.27,49.89 L242.53,42.19 L243.80,38.43 L245.07,38.75 L246.33,42.37 L247.60,47.95 L248.87,54.01 L250.13,59.40 L251.40,63.55 L252.67,66.49 L253.93,68.69 L255.20,70.67 L256.47,72.70 L257.73,74.59 L259.00,75.66 L260.27,75.03 L261.53,71.96 L262.80,66.20 L264.07,58.30 L265.33,49.53 L266.60,41.66 L267.87,36.49 L269.13,35.37 L270.40,38.77 L271.67,46.11 L272.93,55.92 L274.20,66.22 L275.47,75.02 L276.73,80.85 L278.00,83.09 L279.27,82.02 L280.53,78.61 L281.80,74.15 L283.07,69.81 L284.33,66.25 L285.60,63.58 L286.87,61.42 L288.13,59.19 L289.40,56.53 L290.67,53.51 L291.93,50.74 L293.20,49.23 L294.47,50.02 L295.73,53.78 L297.00,60.46 L298.27,69.19 L299.53,78.35 L300.80,86.03 L302.07,90.47 L303.33,90.59 L304.60,86.31 L305.87,78.52 L307.13,68.91 L308.40,59.44 L309.67,51.84 L310.93,47.22 L312.20,45.79 L313.47,47.02 L314.73,49.87 L316.00,53.25 L317.27,56.38 L318.53,59.00 L319.80,61.35 L321.07,63.95 L322.33,67.23 L323.60,71.25 L324.87,75.46 L326.13,78.84 L327.40,80.15 L328.67,78.34 L329.93,73.01 L331.20,64.62 L332.47,54.50 L333.73,44.59 L335.00,36.94 L336.27,33.17 L337.53,34.05 L338.80,39.31 L340.07,47.70 L341.33,57.42 L342.60,66.56 L343.87,73.61 L345.13,77.81 L346.40,79.19 L347.67,78.41 L348.93,76.39 L350.20,73.91 L351.47,71.39 L352.73,68.75 L354.00,65.56 L355.27,61.41 L356.53,56.19 L357.80,50.33 L359.07,44.89 L360.33,41.24 L361.60,40.75 L362.87,44.28 L364.13,51.85 L365.40,62.45 L366.67,74.29 L367.93,85.13 L369.20,92.85 L370.47,96.01 L371.73,94.19 L373.00,88.01 L374.27,78.97 L375.53,68.97 L376.80,59.80 L378.07,52.73 L379.33,48.28 L380.60,46.29 L381.87,46.15 L383.13,47.18 L384.40,48.94 L385.67,51.41 L386.93,54.89 L388.20,59.78 L389.47,66.24 L390.73,73.90 L392.00,81.75 L393.27,88.26 L394.53,91.79 L395.80,90.99 L397.07,85.33 L398.33,75.30 L399.60,62.42 L400.87,48.95 L402.13,37.33 L403.40,29.63 L404.67,27.05 L405.93,29.68 L407.20,36.56 L408.47,46.04 L409.73,56.24 L411.00,65.54 L412.27,72.90 L413.53,77.99 L414.80,80.98 L416.07,82.33 L417.33,82.36 L418.60,81.13 L419.87,78.34 L421.13,73.57 L422.40,66.56 L423.67,57.56 L424.93,47.49 L426.20,37.89 L427.47,30.69 L428.73,27.66 L430.00,29.97 L431.27,37.75 L432.53,49.99 L433.80,64.65 L435.07,79.20 L436.33,91.10 L437.60,98.47 L438.87,100.44 L440.13,97.24 L441.40,90.05 L442.67,80.58 L443.93,70.57 L445.20,61.38 L446.47,53.79 L447.73,48.01 L449.00,43.91 L450.27,41.30 L451.53,40.24 L452.80,41.06 L454.07,44.31 L455.33,50.43 L456.60,59.44 L457.87,70.66 L459.13,82.64 L460.40,93.38 L461.67,100.73 L462.93,102.93 L464.20,99.12 L465.47,89.63 L466.73,75.95 L468.00,60.44"/><path data-wave="ppg" class="trace-wave" d="M12.00,93.68 L13.27,93.29 L14.53,92.55 L15.80,91.22 L17.07,89.00 L18.33,85.53 L19.60,80.52 L20.87,73.80 L22.13,65.50 L23.40,56.15 L24.67,46.67 L25.93,38.26 L27.20,32.16 L28.47,29.34 L29.73,30.25 L31.00,34.62 L32.27,41.61 L33.53,49.98 L34.80,58.39 L36.07,65.75 L37.33,71.36 L38.60,74.94 L39.87,76.63 L41.13,76.80 L42.40,75.96 L43.67,74.64 L44.93,73.29 L46.20,72.28 L47.47,71.86 L48.73,72.15 L50.00,73.15 L51.27,74.80 L52.53,76.93 L53.80,79.35 L55.07,81.87 L56.33,84.31 L57.60,86.53 L58.87,88.44 L60.13,90.01 L61.40,91.24 L62.67,92.16 L63.93,92.82 L65.20,93.27 L66.47,93.57 L67.73,93.76 L69.00,93.87 L70.27,93.94 L71.53,93.98 L72.80,94.00 L74.07,94.01 L75.33,94.02 L76.60,94.02 L77.87,94.02 L79.13,94.02 L80.40,94.02 L81.67,94.02 L82.93,94.02 L84.20,94.02 L85.47,94.02 L86.73,94.02 L88.00,93.68 L89.27,93.29 L90.53,92.55 L91.80,91.22 L93.07,89.00 L94.33,85.53 L95.60,80.52 L96.87,73.80 L98.13,65.50 L99.40,56.15 L100.67,46.67 L101.93,38.26 L103.20,32.16 L104.47,29.34 L105.73,30.25 L107.00,34.62 L108.27,41.61 L109.53,49.98 L110.80,58.39 L112.07,65.75 L113.33,71.36 L114.60,74.94 L115.87,76.63 L117.13,76.80 L118.40,75.96 L119.67,74.64 L120.93,73.29 L122.20,72.28 L123.47,71.86 L124.73,72.15 L126.00,73.15 L127.27,74.80 L128.53,76.93 L129.80,79.35 L131.07,81.87 L132.33,84.31 L133.60,86.53 L134.87,88.44 L136.13,90.01 L137.40,91.24 L138.67,92.16 L139.93,92.82 L141.20,93.27 L142.47,93.57 L143.73,93.76 L145.00,93.87 L146.27,93.94 L147.53,93.98 L148.80,94.00 L150.07,94.01 L151.33,94.02 L152.60,94.02 L153.87,94.02 L155.13,94.02 L156.40,94.02 L157.67,94.02 L158.93,94.02 L160.20,94.02 L161.47,94.02 L162.73,94.02 L164.00,93.68 L165.27,93.29 L166.53,92.55 L167.80,91.22 L169.07,89.00 L170.33,85.53 L171.60,80.52 L172.87,73.80 L174.13,65.50 L175.40,56.15 L176.67,46.67 L177.93,38.26 L179.20,32.16 L180.47,29.34 L181.73,30.25 L183.00,34.62 L184.27,41.61 L185.53,49.98 L186.80,58.39 L188.07,65.75 L189.33,71.36 L190.60,74.94 L191.87,76.63 L193.13,76.80 L194.40,75.96 L195.67,74.64 L196.93,73.29 L198.20,72.28 L199.47,71.86 L200.73,72.15 L202.00,73.15 L203.27,74.80 L204.53,76.93 L205.80,79.35 L207.07,81.87 L208.33,84.31 L209.60,86.53 L210.87,88.44 L212.13,90.01 L213.40,91.24 L214.67,92.16 L215.93,92.82 L217.20,93.27 L218.47,93.57 L219.73,93.76 L221.00,93.87 L222.27,93.94 L223.53,93.98 L224.80,94.00 L226.07,94.01 L227.33,94.02 L228.60,94.02 L229.87,94.02 L231.13,94.02 L232.40,94.02 L233.67,94.02 L234.93,94.02 L236.20,94.02 L237.47,94.02 L238.73,94.02 L240.00,93.68 L241.27,93.29 L242.53,92.55 L243.80,91.22 L245.07,89.00 L246.33,85.53 L247.60,80.52 L248.87,73.80 L250.13,65.50 L251.40,56.15 L252.67,46.67 L253.93,38.26 L255.20,32.16 L256.47,29.34 L257.73,30.25 L259.00,34.62 L260.27,41.61 L261.53,49.98 L262.80,58.39 L264.07,65.75 L265.33,71.36 L266.60,74.94 L267.87,76.63 L269.13,76.80 L270.40,75.96 L271.67,74.64 L272.93,73.29 L274.20,72.28 L275.47,71.86 L276.73,72.15 L278.00,73.15 L279.27,74.80 L280.53,76.93 L281.80,79.35 L283.07,81.87 L284.33,84.31 L285.60,86.53 L286.87,88.44 L288.13,90.01 L289.40,91.24 L290.67,92.16 L291.93,92.82 L293.20,93.27 L294.47,93.57 L295.73,93.76 L297.00,93.87 L298.27,93.94 L299.53,93.98 L300.80,94.00 L302.07,94.01 L303.33,94.02 L304.60,94.02 L305.87,94.02 L307.13,94.02 L308.40,94.02 L309.67,94.02 L310.93,94.02 L312.20,94.02 L313.47,94.02 L314.73,94.02 L316.00,93.68 L317.27,93.29 L318.53,92.55 L319.80,91.22 L321.07,89.00 L322.33,85.53 L323.60,80.52 L324.87,73.80 L326.13,65.50 L327.40,56.15 L328.67,46.67 L329.93,38.26 L331.20,32.16 L332.47,29.34 L333.73,30.25 L335.00,34.62 L336.27,41.61 L337.53,49.98 L338.80,58.39 L340.07,65.75 L341.33,71.36 L342.60,74.94 L343.87,76.63 L345.13,76.80 L346.40,75.96 L347.67,74.64 L348.93,73.29 L350.20,72.28 L351.47,71.86 L352.73,72.15 L354.00,73.15 L355.27,74.80 L356.53,76.93 L357.80,79.35 L359.07,81.87 L360.33,84.31 L361.60,86.53 L362.87,88.44 L364.13,90.01 L365.40,91.24 L366.67,92.16 L367.93,92.82 L369.20,93.27 L370.47,93.57 L371.73,93.76 L373.00,93.87 L374.27,93.94 L375.53,93.98 L376.80,94.00 L378.07,94.01 L379.33,94.02 L380.60,94.02 L381.87,94.02 L383.13,94.02 L384.40,94.02 L385.67,94.02 L386.93,94.02 L388.20,94.02 L389.47,94.02 L390.73,94.02 L392.00,93.68 L393.27,93.29 L394.53,92.55 L395.80,91.22 L397.07,89.00 L398.33,85.53 L399.60,80.52 L400.87,73.80 L402.13,65.50 L403.40,56.15 L404.67,46.67 L405.93,38.26 L407.20,32.16 L408.47,29.34 L409.73,30.25 L411.00,34.62 L412.27,41.61 L413.53,49.98 L414.80,58.39 L416.07,65.75 L417.33,71.36 L418.60,74.94 L419.87,76.63 L421.13,76.80 L422.40,75.96 L423.67,74.64 L424.93,73.29 L426.20,72.28 L427.47,71.86 L428.73,72.15 L430.00,73.15 L431.27,74.80 L432.53,76.93 L433.80,79.35 L435.07,81.87 L436.33,84.31 L437.60,86.53 L438.87,88.44 L440.13,90.01 L441.40,91.24 L442.67,92.16 L443.93,92.82 L445.20,93.27 L446.47,93.57 L447.73,93.76 L449.00,93.87 L450.27,93.94 L451.53,93.98 L452.80,94.00 L454.07,94.01 L455.33,94.02 L456.60,94.02 L457.87,94.02 L459.13,94.02 L460.40,94.02 L461.67,94.02 L462.93,94.02 L464.20,94.02 L465.47,94.02 L466.73,94.02 L468.00,93.68" style="display:none"/><path data-wave="fnirs" class="trace-wave" d="M12.00,83.21 L13.27,83.21 L14.53,83.21 L15.80,83.21 L17.07,83.21 L18.33,83.21 L19.60,83.21 L20.87,83.21 L22.13,83.21 L23.40,83.21 L24.67,83.21 L25.93,83.21 L27.20,83.21 L28.47,83.21 L29.73,83.21 L31.00,83.21 L32.27,83.21 L33.53,83.21 L34.80,83.21 L36.07,83.21 L37.33,83.21 L38.60,83.21 L39.87,83.21 L41.13,83.21 L42.40,83.21 L43.67,83.21 L44.93,83.21 L46.20,83.21 L47.47,83.21 L48.73,83.21 L50.00,83.21 L51.27,83.21 L52.53,83.21 L53.80,83.21 L55.07,83.21 L56.33,83.21 L57.60,83.21 L58.87,83.21 L60.13,83.19 L61.40,83.14 L62.67,83.06 L63.93,82.92 L65.20,82.73 L66.47,82.48 L67.73,82.16 L69.00,81.78 L70.27,81.33 L71.53,80.80 L72.80,80.21 L74.07,79.56 L75.33,78.83 L76.60,78.05 L77.87,77.20 L79.13,76.30 L80.40,75.34 L81.67,74.33 L82.93,73.27 L84.20,72.18 L85.47,71.04 L86.73,69.87 L88.00,68.68 L89.27,67.45 L90.53,66.21 L91.80,64.95 L93.07,63.67 L94.33,62.39 L95.60,61.10 L96.87,59.81 L98.13,58.52 L99.40,57.24 L100.67,55.97 L101.93,54.71 L103.20,53.46 L104.47,52.23 L105.73,51.02 L107.00,49.83 L108.27,48.66 L109.53,47.52 L110.80,46.41 L112.07,45.33 L113.33,44.29 L114.60,43.27 L115.87,42.29 L117.13,41.34 L118.40,40.43 L119.67,39.56 L120.93,38.73 L122.20,37.93 L123.47,37.17 L124.73,36.46 L126.00,35.78 L127.27,35.14 L128.53,34.54 L129.80,33.98 L131.07,33.46 L132.33,32.98 L133.60,32.54 L134.87,32.13 L136.13,31.77 L137.40,31.44 L138.67,31.15 L139.93,30.90 L141.20,30.68 L142.47,30.50 L143.73,30.36 L145.00,30.24 L146.27,30.16 L147.53,30.12 L148.80,30.10 L150.07,30.12 L151.33,30.16 L152.60,30.24 L153.87,30.34 L155.13,30.47 L156.40,30.63 L157.67,30.81 L158.93,31.01 L160.20,31.24 L161.47,31.50 L162.73,31.77 L164.00,32.07 L165.27,32.38 L166.53,32.72 L167.80,33.07 L169.07,33.44 L170.33,33.83 L171.60,34.23 L172.87,34.65 L174.13,35.08 L175.40,35.52 L176.67,35.98 L177.93,36.45 L179.20,36.93 L180.47,37.42 L181.73,37.92 L183.00,38.43 L184.27,38.95 L185.53,39.48 L186.80,40.01 L188.07,40.55 L189.33,41.09 L190.60,41.65 L191.87,42.20 L193.13,42.76 L194.40,43.33 L195.67,43.89 L196.93,44.47 L198.20,45.04 L199.47,45.61 L200.73,46.19 L202.00,46.77 L203.27,47.35 L204.53,47.93 L205.80,48.51 L207.07,49.09 L208.33,49.68 L209.60,50.26 L210.87,50.84 L212.13,51.42 L213.40,52.00 L214.67,52.57 L215.93,53.15 L217.20,53.73 L218.47,54.30 L219.73,54.87 L221.00,55.44 L222.27,56.01 L223.53,56.58 L224.80,57.14 L226.07,57.70 L227.33,58.26 L228.60,58.82 L229.87,59.37 L231.13,59.92 L232.40,60.47 L233.67,61.02 L234.93,61.56 L236.20,62.11 L237.47,62.64 L238.73,63.18 L240.00,63.71 L241.27,64.24 L242.53,64.77 L243.80,65.29 L245.07,65.81 L246.33,66.32 L247.60,66.84 L248.87,67.35 L250.13,67.85 L251.40,68.35 L252.67,68.85 L253.93,69.34 L255.20,69.83 L256.47,70.31 L257.73,70.79 L259.00,71.26 L260.27,71.73 L261.53,72.19 L262.80,72.65 L264.07,73.10 L265.33,73.55 L266.60,73.99 L267.87,74.42 L269.13,74.84 L270.40,75.26 L271.67,75.67 L272.93,76.07 L274.20,76.47 L275.47,76.85 L276.73,77.23 L278.00,77.60 L279.27,77.96 L280.53,78.31 L281.80,78.66 L283.07,78.99 L284.33,79.31 L285.60,79.62 L286.87,79.92 L288.13,80.22 L289.40,80.50 L290.67,80.77 L291.93,81.03 L293.20,81.27 L294.47,81.51 L295.73,81.74 L297.00,81.95 L298.27,82.16 L299.53,82.35 L300.80,82.53 L302.07,82.71 L303.33,82.87 L304.60,83.02 L305.87,83.15 L307.13,83.28 L308.40,83.40 L309.67,83.51 L310.93,83.61 L312.20,83.69 L313.47,83.77 L314.73,83.84 L316.00,83.90 L317.27,83.96 L318.53,84.00 L319.80,84.04 L321.07,84.07 L322.33,84.09 L323.60,84.10 L324.87,84.11 L326.13,84.11 L327.40,84.11 L328.67,84.10 L329.93,84.08 L331.20,84.06 L332.47,84.04 L333.73,84.01 L335.00,83.98 L336.27,83.95 L337.53,83.91 L338.80,83.87 L340.07,83.83 L341.33,83.79 L342.60,83.74 L343.87,83.70 L345.13,83.65 L346.40,83.61 L347.67,83.56 L348.93,83.51 L350.20,83.46 L351.47,83.42 L352.73,83.37 L354.00,83.32 L355.27,83.28 L356.53,83.23 L357.80,83.19 L359.07,83.15 L360.33,83.11 L361.60,83.07 L362.87,83.03 L364.13,83.00 L365.40,82.97 L366.67,82.93 L367.93,82.90 L369.20,82.88 L370.47,82.85 L371.73,82.82 L373.00,82.80 L374.27,82.78 L375.53,82.76 L376.80,82.74 L378.07,82.73 L379.33,82.71 L380.60,82.70 L381.87,82.69 L383.13,82.68 L384.40,82.67 L385.67,82.67 L386.93,82.66 L388.20,82.66 L389.47,82.66 L390.73,82.66 L392.00,82.66 L393.27,82.66 L394.53,82.66 L395.80,82.66 L397.07,82.66 L398.33,82.67 L399.60,82.67 L400.87,82.68 L402.13,82.68 L403.40,82.69 L404.67,82.70 L405.93,82.71 L407.20,82.71 L408.47,82.72 L409.73,82.73 L411.00,82.74 L412.27,82.75 L413.53,82.76 L414.80,82.77 L416.07,82.78 L417.33,82.79 L418.60,82.79 L419.87,82.80 L421.13,82.81 L422.40,82.82 L423.67,82.83 L424.93,82.84 L426.20,82.85 L427.47,82.86 L428.73,82.87 L430.00,82.88 L431.27,82.89 L432.53,82.90 L433.80,82.91 L435.07,82.91 L436.33,82.92 L437.60,82.93 L438.87,82.94 L440.13,82.95 L441.40,82.95 L442.67,82.96 L443.93,82.97 L445.20,82.98 L446.47,82.98 L447.73,82.99 L449.00,83.00 L450.27,83.00 L451.53,83.01 L452.80,83.02 L454.07,83.02 L455.33,83.03 L456.60,83.03 L457.87,83.04 L459.13,83.04 L460.40,83.05 L461.67,83.05 L462.93,83.06 L464.20,83.06 L465.47,83.07 L466.73,83.07 L468.00,83.08" style="display:none"/></svg><div class="trace-axis" aria-hidden="true"><span>0 s</span><span id="trace-mid">1 s</span><span id="trace-end">2 s</span></div></div>
+          <p class="trace-caption" aria-live="polite" aria-atomic="true"><span data-trace-note="eeg">EEG · A simulated 10 Hz rhythm in a two-second window.</span><span data-trace-note="ppg" hidden>PPG · Six simulated pulses, each with a fast rise and a slower return.</span><span data-trace-note="fnirs" hidden>fNIRS · A slow, simulated change in oxygenated hemoglobin after a stimulus.</span></p>
+        </figure>
       </div>
     </section>
 
@@ -159,23 +126,23 @@
         <article class="news-card news-project-card reveal">
           <div class="news-status" aria-hidden="true">
             <span class="news-pulse"></span>
-            <small>OPEN SOURCE · CONTRIBUTORS WANTED</small>
+            <small>Open for collaboration</small>
           </div>
           <div class="news-copy">
-            <p class="kicker">NEWS · NEUROFLOW</p>
-            <h2 id="news-title">Building NeuroFlow—an intelligent workspace for neurophysiological signals.</h2>
-            <p>NeuroFlow connects local EEG, MEG, and fNIRS dataset inspection with a Go/Eino ReAct Agent, MNE-Python tools, and a RAG knowledge layer. Its first trusted-workspace capabilities are available; the next milestone is deterministic EEG/EMG analysis and multimodal workflows.</p>
+            <p class="kicker">Open source · v0.2</p>
+            <h2 id="news-title">NeuroFlow: a local workbench for neural signals</h2>
+            <p>In v0.2, a ReAct agent checks the recording and asks for missing acquisition details. Python and MNE run the signal processing; the workbench keeps the processing parameters and quality reports with the results.</p>
             <div class="news-project-tags" aria-label="NeuroFlow technology stack">
               <span>Go · Gin · Eino</span>
-              <span>EEG · EMG · fNIRS</span>
+              <span>EEG · MEG · fNIRS</span>
               <span>Electron · MNE</span>
               <span>RAG · Qdrant</span>
             </div>
-            <p class="news-collab"><strong>Looking for collaborators:</strong> signal-processing tools · Agent workflows · public-dataset benchmarks · desktop UI and visualization.</p>
+            <p class="news-collab"><strong>Looking for collaborators:</strong> I welcome BCI competition teams, research partners, and contributors to signal tools and public-dataset benchmarks.</p>
           </div>
           <div class="news-actions">
-            <a class="button button-primary news-action" href="https://github.com/XCZchaos/NeuroFlow" target="_blank" rel="noopener">
-              Explore NeuroFlow
+            <a class="button button-primary news-action" href="https://github.com/XCZchaos/NeuroFlow/tree/v0.2" target="_blank" rel="noopener">
+              Explore the v0.2 source
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
             </a>
             <a class="button button-secondary news-action" href="mailto:asherxiong552@gmail.com?subject=NeuroFlow%20Open%20Source%20Collaboration">Collaborate by email</a>
@@ -183,6 +150,8 @@
         </article>
       </div>
     </section>
+
+    <section id="articles" class="notes-section" aria-labelledby="notes-title"><div class="container notes-layout"><header><p class="notes-credit">Shamboo / AI知识物语</p><h2 id="notes-title">BCI field notes</h2><p>Seven original articles in Chinese, with their derivations, code examples, illustrations, and references.</p></header><div class="notes-index"><div class="notes-part"><h3>Foundations</h3><ol start="1"><li><a href="https://xczchaos.shamboo2003.chatgpt.site/articles/bci/"><span class="entry-number" aria-hidden="true">01</span><span>Brain–computer interfaces: concepts and history</span></a></li><li><a href="https://xczchaos.shamboo2003.chatgpt.site/articles/eeg/"><span class="entry-number" aria-hidden="true">02</span><span>Understanding the origins of EEG</span></a></li></ol></div><div class="notes-part"><h3>Signal methods</h3><ol start="3"><li><a href="https://xczchaos.shamboo2003.chatgpt.site/articles/preprocessing/"><span class="entry-number" aria-hidden="true">03</span><span>EEG preprocessing: from raw recordings to usable data</span></a></li><li><a href="https://xczchaos.shamboo2003.chatgpt.site/articles/features/"><span class="entry-number" aria-hidden="true">04</span><span>From waveforms to machine learning: EEG feature extraction</span></a></li></ol></div><div class="notes-part"><h3>Models and sleep</h3><ol start="5"><li><a href="https://xczchaos.shamboo2003.chatgpt.site/articles/cnn/"><span class="entry-number" aria-hidden="true">05</span><span>How CNNs learn features from EEG</span></a></li><li><a href="https://xczchaos.shamboo2003.chatgpt.site/articles/transformer/"><span class="entry-number" aria-hidden="true">06</span><span>From attention to EEG decoding with Transformers</span></a></li><li><a href="https://xczchaos.shamboo2003.chatgpt.site/articles/sleep/"><span class="entry-number" aria-hidden="true">07</span><span>From sleep architecture to EEG sleep staging</span></a></li></ol></div></div></div></section>
 
     <section class="section" id="about">
       <div class="container">
@@ -503,7 +472,7 @@
 
         <div class="research-grid">
           <article class="publication-card publication-feature reveal">
-            <a class="paper-preview" href="https://doi.org/10.1016/j.bspc.2025.108421" target="_blank" rel="noopener" aria-label="Open CT-MIFNet paper via DOI"><img src="assets/paper.webp" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='assets/paper.svg'" alt="First page of the CT-MIFNet journal paper" /><span>OPEN PAPER ↗</span></a>
+            <a class="paper-preview" href="https://doi.org/10.1016/j.bspc.2025.108421" target="_blank" rel="noopener" aria-label="Open CT-MIFNet paper via DOI"><img src="assets/paper-cover.jpg" width="300" height="400" loading="lazy" decoding="async" alt="First page of the CT-MIFNet journal paper" /><span>OPEN PAPER ↗</span></a>
             <div class="publication-copy">
               <div class="pub-topline"><span>FIRST-AUTHOR PAPER · 2026</span><span>Biomedical Signal Processing and Control · IF 5.7</span></div>
               <h3>CT-MIFNet: Convolutional transformer-based multi-view interaction and fusion network for EEG decoding</h3>
@@ -577,13 +546,13 @@
         <div class="education-grid">
           <div class="education-list">
             <article class="education-card reveal">
-              <img class="edu-logo" loading="lazy" decoding="async" src="assets/csu.webp" onerror="this.onerror=null;this.src='assets/csu-logo.svg'" alt="Center for Space Utilization, Chinese Academy of Sciences logo" />
+              <img class="edu-logo" loading="lazy" decoding="async" src="assets/csu-mark.jpg" width="160" height="160" alt="Center for Space Utilization, Chinese Academy of Sciences logo" />
               <div class="edu-year">2026 — 2029</div>
               <div><p class="project-type">M.Eng. student · Double First-Class · THE Top 100</p><h3>University of Chinese Academy of Sciences</h3><p>Master of Engineering in Computer Technology</p><small>Enrolled September 2026</small></div>
             </article>
 
             <article class="education-card reveal">
-              <img class="edu-logo" loading="lazy" decoding="async" src="assets/jxau.webp" onerror="this.onerror=null;this.src='assets/jxau-logo.svg'" alt="Jiangxi Agricultural University logo" />
+              <img class="edu-logo" loading="lazy" decoding="async" src="assets/jxau-mark.jpg" width="160" height="160" alt="Jiangxi Agricultural University logo" />
               <div class="edu-year">2022 — 2026</div>
               <div><p class="project-type">Top 30% of major</p><h3>Jiangxi Agricultural University</h3><p>Bachelor of Engineering in Software Engineering</p><small>Coursework: Data Structures & Algorithms, Machine Learning, Artificial Intelligence, Computer Networks, and Computer Organization.</small></div>
             </article>
@@ -649,12 +618,13 @@
 
   <footer class="footer">
     <div class="container">
-      <p>© <span id="year"></span> Yibo Xiong. Designed for the intersection of brain and machine.</p>
+      <p>© <span id="year">2026</span> XCZchaos.</p>
       <a href="#top">Back to top ↑</a>
     </div>
   </footer>
 
-  <script src="i18n.js?v=20260910a"></script>
-  <script src="script.js?v=20260909k"></script>
+  <noscript><style>.reveal{opacity:1;transform:none}.trace-choices,.nav-toggle,.theme-toggle,.language-toggle{display:none}.nav .nav-links{display:flex;position:static;visibility:visible;opacity:1;pointer-events:auto;transform:none;flex-wrap:wrap;gap:.5em;box-shadow:none}.nav{height:auto;flex-wrap:wrap;padding-block:.5rem}.site-header{position:static}.hero{padding-top:2rem}.nav-links a{padding:.35rem}</style></noscript>
+  <script src="i18n.js?v=20261114"></script>
+  <script src="script.js?v=20261114"></script>
 </body>
 </html>
